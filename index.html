@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petra Lund - Portfolio</title>
+    <link rel="icon" href="images/logo-small-black.png" />
+    <link rel="stylesheet" href="tailwind.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+  </head>
+  <body class="bg-contain text-text font-poppins" x-data="{position: 'home', dropdownMenu: false, modals: loadModals().modals, showModal: loadModals().showModal}"
+  @keyup="
+  if (showModal != 0) { 
+    switch ($event.keyCode) {
+      case 37:
+        if(showModal == 1) {
+          showModal = modals.length
+        } else showModal--
+        break;
+      case 39:
+        if(showModal == modals.length) {
+          showModal = 1
+        } else showModal++
+        break;
+      case 27:
+        showModal = 0
+        break; 
+    }
+  }"
+  @scroll.window="position = document.querySelector('#about').getBoundingClientRect().top <= 100 && document.querySelector('#portfolio').getBoundingClientRect().top > 100 ? 'about' : (document.querySelector('#portfolio').getBoundingClientRect().top <= 100 && document.querySelector('#contact').getBoundingClientRect().top > 100 ? 'portfolio' : (document.querySelector('#contact').getBoundingClientRect().top <= 100 ? 'contact' : 'home'))">
+    <header class="py-6 text-text md:h-screen w-full">
+      <div
+        class="container flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full"
+      >
+        <div class="text-lg font-semibold flex items-center"><img class="w-8 h-8 mr-2" src="images/logo_white.svg">Petra Lund</div>
+        <div class="hidden md:flex space-x-12 items-center">
+          <a href="#" class="selected-text hover:text-theme hover:opacity-90">Etusivu</a>
+          <a href="#about" class="hover:text-theme hover:opacity-90">Tietoa</a>
+          <a href="#portfolio" class="hover:text-theme hover:opacity-90">Portfolio</a>
+          <a href="#contact">
+            <button class="bg-theme px-6 py-2 rounded font-semibold text-body hover:opacity-90">
+              Ota yhteyttä
+            </button></a
+          >
+        </div>
+        <div class="fixed right-0">
+          <!-- mobile nav -->
+          <div class="md:hidden px-8 cursor-pointer" @click="dropdownMenu = !dropdownMenu">
+            <svg
+              width="32"
+              height="26"
+              viewBox="0 0 34 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2"
+                y1="2"
+                x2="31"
+                y2="2"
+                stroke="#EEF0F3"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <line
+                x1="2"
+                y1="14.0614"
+                x2="31"
+                y2="14.0614"
+                stroke="#EEF0F3"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <path
+                d="M9 26H31.02"
+                stroke="#EEF0F3"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <div x-show="dropdownMenu" class="md:hidden absolute w-screen -mt-40 right-0 " @click.away="dropdownMenu = !dropdownMenu">
+            <div class="bg-body rounded flex flex-col w-11/12 space-y-2 p-6 -ml-5 border border-gray-400">
+              <img src="images/close.png" @click="dropdownMenu = false" class="w-6 h-6 cursor-pointer hover:opacity-90 absolute right-10">
+              <a href="#" :class="{ 'selected-text' : position==='home' }" class="hover:text-theme hover:opacity-90 w-1/2">Etusivu</a>
+              <a href="#about" :class="{ 'selected-text' : position==='about' }" class="hover:text-theme hover:opacity-90 w-1/2">Tietoa</a>
+              <a href="#portfolio" :class="{ 'selected-text' : position==='portfolio' }" class="hover:text-theme hover:opacity-90 w-1/2">Portfolio</a>
+              <a href="#contact">
+              <button class="bg-text px-6 py-2 rounded font-semibold text-body hover:opacity-90" :class="{ 'selected-button' : position==='contact' }">
+                Ota yhteyttä
+              </button></a
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div
+      class="container flex justify-between items-center mx-auto w-full h-full px-8 md:px-14 lg:px-24"
+    >
+      <div class="flex flex-wrap md:flex-nowrap w-full h-full">
+        <nav class="inline-block lg:mr-24 lg:w-4 fixed hidden lg:block z-10">
+          <div class="flex flex-col justify-start space-y-6 mt-44">
+            <a
+              href="#"
+              class="nav-dot block w-7 h-7 rounded-full border-2 border-nav bg-body"
+              :class="{ 'selected-circle' : position==='home' }"
+            >
+              <span
+                class="bg-gray-800 text-text px-2 py-1 rounded-md ml-10 opacity-0 whitespace-nowrap"
+                >Etusivu</span
+              >
+            </a>
+            <a
+              href="#about"
+              class="nav-dot block w-7 h-7 rounded-full border-2 border-nav bg-body"
+              :class="{ 'selected-circle' : position==='about' }"
+            >
+              <span
+                class="bg-gray-800 text-text px-2 py-1 rounded-md ml-10 opacity-0 whitespace-nowrap"
+                >Tietoa</span
+              >
+            </a>
+            <a
+              href="#portfolio"
+              class="nav-dot block w-7 h-7 rounded-full border-2 border-nav bg-body"
+              :class="{ 'selected-circle' : position==='portfolio' }"
+            >
+              <span
+                class="bg-gray-800 text-text px-2 py-1 rounded-md ml-10 opacity-0 whitespace-nowrap"
+                >Portfolio</span
+              >
+            </a>
+            <a
+              href="#contact"
+              class="nav-dot block w-7 h-7 rounded-full border-2 border-nav bg-body"
+              :class="{ 'selected-circle' : position==='contact' }"
+            >
+              <span
+                class="bg-gray-800 text-text px-2 py-1 rounded-md ml-10 opacity-0 whitespace-nowrap"
+                >Ota yhteyttä</span
+              >
+            </a>
+          </div>
+        </nav>
+        <div class="w-full flex items-center h-1/2 md:h-full hidden md:block">
+          <img class="self-portrait h-full md:absolute md:h-5/6 mx-auto md:mt-10 left-0 md:left-20 lg:left-48 z-0" src="images/self-portrait.png" alt="self portrait">
+      </div>
+        <div
+          class="flex flex-wrap justify-center lg:mr-20 md:justify-end max-w-xl mt-8 md:my-20 xl:my-10 md:z-10"
+        >
+            <img src="images/logo_white.svg">
+            <h1 class="font-bold mt-6 text-4xl md:text-5xl xl:text-6xl text-center md:text-right w-full md:w-auto">Luova osaaja, <br> tehokas koodaaja</mr></h1>
+            <div class="w-full flex justify-center md:justify-end">
+              <a href="#portfolio">
+                <button class="px-8 py-4 bg-theme text-body font-semibold mt-6 flex items-center space-x-3 rounded hover:opacity-90">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#312E39"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                    </div>
+                    <span>Portfolio</span>
+                </button>
+                </a>
+            </div>
+        </div>
+        
+      </div>
+    </div>
+  </header>
+  <!-- about -->
+  <div class="text-center w-full px-16 md:px-28 lg:px-48 mt-64">
+    <h2 id="about" class="font-bold text-3xl">Hei!</h2>
+    <p class="mt-10 text-left">Olen Petra Lund, 26-vuotias mediatekniikkaan suuntautunut kolmannen vuoden <strong>Tieto- ja viestintätekniikan insinööriopiskelija</strong> Jyväskylästä. Olen erityisen kiinnostunut kaikenlaisesta koodaamisesta ja visualisoinnista. Vapaa-aikani menee pitkälti piirtämisen, tietokonepelien ja rumpujen soiton parissa. </p>
+    <p class="mt-10 text-left">Aiemmalta koulutukseltani olen media-assistentti, suuntautuen niin ääni- ja tapahtumatuotantoon, kuin graafiseen- ja verkkotuotantoon. Töitäkin olen hetken päässyt tekemään graafisen suunnittelun parissa. </p>
+    <p class="mt-10 text-left">Ohjelmoinnin pariin olen päässyt vasta tämänhetkisten opintojeni kautta, ja onneksi pääsin! Vaikka kokemusta ei ole vielä paljoa ehtinyt kertymään, voin sanoa että ohjelmointi on todellakin se mun juttu!</p>
+  </div>
+  <!-- portfolio -->
+  <div class="container mt-64 flex justify-between items-center mx-auto px-16 md:px-28 lg:px-48 w-full">
+    <section class="w-full">
+      <h2 id="portfolio" class="font-bold text-3xl">Portfolio</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        <img src="images/thumbnails/cycles-render-hahmo.png" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 1">
+        <img src="images/thumbnails/kratti1.png" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 2">
+        <img src="images/thumbnails/weather-app.png" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 3">
+        <img src="images/thumbnails/4.1.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 4">
+        <img src="images/thumbnails/8.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-left cursor-pointer" @click="showModal = 5">
+        <img src="images/thumbnails/10.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 6">
+        <img src="images/thumbnails/21.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 7">
+        <img src="images/thumbnails/34.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 8">
+        <img src="images/thumbnails/36.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 9">
+        <img src="images/thumbnails/37.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 10">
+      </div>
+      <!-- modals -->
+      <template x-for="modal in modals" :key="modal.id">
+        <div x-show="showModal === modal.id" class="fixed left-0 top-0 bg-gray-900 h-screen w-screen z-20 bg-opacity-50 flex justify-center items-center">
+          <!-- @click.away="showModal = 0" -->
+          <div class="w-4/5 h-4/5 bg-text rounded p-4 flex flex-col md:flex-row-reverse items-center md:items-start" @click.away="showModal = 0">
+            <button @click="showModal = 0" class="bg-gray-500 p-2 h-9 w-9 text-gray-100 rounded z-0 self-end md:self-start absolute"><img src="images/close.png" alt="close button"></button>
+            <div class="flex space-y-4 md:space-x-4 flex-col md:flex-row h-full w-full">
+              <div class="h-1/2 md:h-full md:w-3/5 mb-14" :class="{ 'md:w-full h-full' : modal.description==='' }" :class="{ 'mb-0' : modal.info===''}">
+              <h2 class="font-bold text-2xl text-body"><span x-text="modal.name"></span></h2>
+                <div class="w-full h-3/4 mt-4 py-2" :class="{ 'h-5/6' : modal.info===''}">
+                <img :src="modal.image" alt="" class="rounded object-contain max-h-full mx-auto">
+                <div>
+                  <div :class="{ 'hidden' : modal.info==='' }" class="w-full text-center h-fit">
+                    <small class="text-body"><span x-text="modal.info"></span></small>
+                  </div>
+                  <div :class="{ 'hidden' : modal.link==='' }" class="w-full text-center h-fit">
+                    <a x-bind:href="modal.link" target="_blank" class="text-theme underline">Toteutus</a>
+                  </div>
+                  <div :class="{ 'hidden' : modal.doc==='' }" class="w-full text-center h-fit">
+                    <a x-bind:href="modal.doc" target="_blank" class="text-theme underline">Dokumentaatio / Git</a>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="text-body md:pt-10 w-full md:w-1/2 md:h-full overflow-auto" :class="{ 'hidden' : modal.description==='' }">
+                <span x-text="modal.description"></span>
+              </div>
+            </div>
+            <div class="flex justify-between w-full absolute px-8 py-2 z-10 bottom-0 md:bottom-1/2 md:left-0">
+              <button class="bg-text rounded-full text-body px-4 py-2 border border-body font-bold text-xl md:text-3xl" @click="showModal = showModal === 1 ? modals.length : showModal -1"> < </button>
+              <button class="bg-text rounded-full text-body px-4 py-2 border border-body font-bold text-xl md:text-3xl" @click="showModal = showModal === modals.length ? 1 : showModal +1"> > </button>
+            </div>
+          </div>
+        </div>
+      </template>
+    </section>
+  </div>
+  <!-- contact -->
+  <div class="container mt-64 flex justify-between items-center mx-auto px-16 md:px-28 lg:px-48 w-full">
+    <section class="w-full">
+      <h2 id="contact" class="font-bold text-3xl">Ota yhteyttä</h2>
+      <p>Voit ottaa minuun yhteyttä koska tahansa!</p>
+      <div class="w-full grid grid-cols-2 gap-8 lg:gap-32 mt-16 md:mt-24 contact">
+        <!-- <div class="space-y-12">
+          <div>
+            <label class="text-textblock mb-6 text-xl font-semibold">Nimi</label>
+            <input type="text" class="rounded w-full border border-gray-400 bg-body px-4 py-4">
+          </div>
+          <div>
+            <label class="text-text block mb-6 text-xl font-semibold">S-posti</label>
+            <input type="email" class="rounded w-full border border-gray-400 bg-body px-4 py-4">
+          </div>
+          <div>
+            <label class="text-text block mb-6 text-xl font-semibold">Viesti</label>
+            <textarea name="" id="" cols="30" rows="10" class="rounded w-full border border-gray-400 bg-body px-4 py-4 h-56 resize-none"></textarea>
+          </div>
+          <button class="px-6 py-2 bg-theme text-body font-semibold rounded">Lähetä</button>
+        </div> -->
+        <img src="images/Petra.jpg" alt="Petra Lund" class="rounded-full max-h-72">
+        <div class="md:pt-12">
+          <!-- contact info -->
+          <p>Petra Lund</p>
+          <p>044 263 6251</p>
+          <a href="mailto:petra.lund2@gmail.com" class="underline">petra.lund2@gmail.com</a>
+
+          <div class="flex mt-20 space-x-6">
+            <!-- LinkedIn -->
+            <a href="#">
+              <svg></svg>
+            </a>
+          </div>          
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="p-4 w-full bg-body border-t border-gray-400">&copy Petra Lund 2022 -</footer>
+
+  <script>
+    function loadModals() {
+      return {
+        showModal: 0,
+        modals: [
+        {
+          id: 1,
+          name: '3D-malli',
+          image: 'images/cycles-render-hahmo.png',
+          info: '3D-mallintamisen perusteet -opintojaksolle tekemäni lopputyön Cycles-render.',
+          description: '',
+          link: '',
+          doc: 'https://student.labranet.jamk.fi/~N2988/3D_raportti.pdf',
+        },
+        {
+          id: 2,
+          name: 'Kratti-kauppa',
+          image: 'images/kratti1.png',
+          info: 'HTML, SCSS, Bootstrap, JavaScript',
+          description: 'Kratti on kuvitteellinen, mystisistä ja spirituaalisista asioista kiinnostuneille suunnattu verkkokauppa, jonka suunnittelimme ryhmäni kanssa syksyllä 2020 JAMK:in Web-palvelun määrittely ja suunnittelu-opintojaksolla. Suunnitelman pohjalta tein etusivu-, kauppa-, ja tuotesivu-osiot sisältävän visualisoinnin/toteutuksen samana syksynä järjestetyn Web-visualisointi-opintojakson harjoitustyöksi.',
+          link: 'https://n2988.pages.labranet.jamk.fi/web-visualisointi/WV-H11/project/',
+          doc: 'https://gitlab.labranet.jamk.fi/N2988/web-visualisointi/-/tree/pages/WV-H11/project',
+        },
+        {
+          id: 3,
+          name: 'Sää-sovellus',
+          image: 'images/weather-app.png',
+          info: 'React, Node.js, Openweathermap API',
+          description: 'Jyväskylän ammattikorkeakoulun (JAMK) Web-ohjelmointi kurssille tekemäni harjoitustyö. Sovelluksessa käyttäjä voi hakea haluamansa kaupungin tämänhetkisen sään ja kahden seuraavan päivän ennusteet. Haku tehdään joko hakukentän kautta tai hiirellä Suomen kartasta klikkaamalla ensin maakuntaa, jonka jälkeen kartta zoomaa lähemmäs ja kyseisen maakunnan kaupungit tulevat näkyviin. Sitten käyttäjä voi kartasta hiirellä klikkaamalla valita haluamansa kaupungin.',
+          link: 'https://student.labranet.jamk.fi/~N2988/web_ohjelmointi/harjoitusty%c3%b6/build/',
+          doc: 'https://student.labranet.jamk.fi/~N2988/web_ohjelmointi/harjoitusty%C3%B6/dokumentointi.html',
+        },
+        {
+          id: 4,
+          name: 'Tuokiotupa vapaaehtois-esite',
+          image: 'images/4.1.jpg',
+          info: '',
+          description: '',
+          link: '',
+          doc: '',
+        },
+        {
+          id: 5,
+          name: 'Rati-riti-ralla talvitapahtuman LED-taulu mainos',
+          image: 'images/8.jpg',
+          info: '',
+          description: '',
+          link: '',
+          doc: '',
+        },
+        {
+          id: 6,
+          name: 'Lehtimainos',
+          image: 'images/10.jpg',
+          info: '',
+          description: '',
+          link: '',
+          doc: '',
+        },
+        {
+          id: 7,
+          name: 'Työ tulevaisuuteen mainosjuliste',
+          image: 'images/21.jpg',
+          info: '',
+          description: '',
+          link: '',
+          doc: '',
+        },
+        {
+          id: 8,
+          name: 'Verhoiluliike Ellinelli juliste',
+          image: 'images/34.jpg',
+          info: '',
+          description: '',
+          link: '',
+          doc: '',
+        },
+        {
+          id: 9,
+          name: 'Passover Warfare keikkajuliste',
+          image: 'images/36.jpg',
+          info: '',
+          description: '',
+          link: '',
+          doc: '',
+        },
+        {
+          id: 10,
+          name: 'Solonen ja Kosola keikkajuliste',
+          image: 'images/37.jpg',
+          info: '',
+          description: '',
+          link: '',
+          doc: '',
+        },
+        ],
+      }
+    }
+  </script>
+  </body>
+</html>

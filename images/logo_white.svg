@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="120" height="120" version="1.1" viewBox="0 0 111.82 97.841" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="filter86443" x="-.051433" y="-.056148" width="1.1162" height="1.1317" color-interpolation-filters="sRGB">
+            <feFlood flood-color="rgb(0,0,0)" flood-opacity=".49804" result="flood"/>
+            <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+            <feGaussianBlur in="composite1" result="blur" stdDeviation="0.3"/>
+            <feOffset dx="0.3" dy="0.3" result="offset"/>
+            <feComposite in="SourceGraphic" in2="offset" result="composite2"/>
+        </filter>
+    </defs>
+    <g transform="translate(-46.068 -108.14)" display="none">
+        <g font-family="Calibri" font-size="19.756px" letter-spacing="0px" stroke-width=".26458" word-spacing="0px">
+            <text x="12.602061" y="241.48279" style="line-height:1.25" xml:space="preserve"><tspan x="12.602061" y="241.48279" font-family="'Britannic Bold'" stroke-width=".26458">PETRA</tspan></text>
+            <text x="21.839479" y="280.6059" style="line-height:1.25" xml:space="preserve"><tspan x="21.839479" y="280.6059" font-family="'Franklin Gothic Heavy'" stroke-width=".26458">PETRA</tspan></text>
+            <text x="45.980511" y="254.42546" style="line-height:1.25" xml:space="preserve"><tspan x="45.980511" y="254.42546" font-family="'Britannic Bold'" stroke-width=".26458">LUND</tspan></text>
+            <text x="58.756672" y="293.94467" style="line-height:1.25" xml:space="preserve"><tspan x="58.756672" y="293.94467" font-family="'Franklin Gothic Heavy'" stroke-width=".26458">LUND</tspan></text>
+        </g>
+        <g font-family="'Britannic Bold'" letter-spacing="0px" word-spacing="0px">
+            <g font-size="19.756px" stroke-width=".26458">
+                <text x="33.861736" y="33.167183" style="line-height:1.25" xml:space="preserve"><tspan x="33.861736" y="33.167183" font-family="'Britannic Bold'" stroke-width=".26458">P</tspan></text>
+                <text x="45.871384" y="33.167183" style="line-height:1.25" xml:space="preserve"><tspan x="45.871384" y="33.167183" font-family="'Britannic Bold'" stroke-width=".26458">E</tspan></text>
+                <text x="59.154339" y="33.167183" style="line-height:1.25" xml:space="preserve"><tspan x="59.154339" y="33.167183" font-family="'Britannic Bold'" stroke-width=".26458">T</tspan></text>
+                <text x="69.86174" y="33.167183" style="line-height:1.25" xml:space="preserve"><tspan x="69.86174" y="33.167183" font-family="'Britannic Bold'" stroke-width=".26458">R</tspan></text>
+                <text x="83.135048" y="33.167183" style="line-height:1.25" xml:space="preserve"><tspan x="83.135048" y="33.167183" font-family="'Britannic Bold'" stroke-width=".26458">A</tspan></text>
+                <text x="69.86174" y="46.167183" style="line-height:1.25" xml:space="preserve"><tspan x="69.86174" y="46.167183" font-family="'Britannic Bold'" stroke-width=".26458">L</tspan></text>
+            </g>
+            <text transform="scale(1.0416 .96009)" x="78.642174" y="48.086536" font-size="20.577px" stroke-width=".27558" style="line-height:1.25" xml:space="preserve"><tspan x="78.642174" y="48.086536" font-family="'Britannic Bold'" stroke-width=".27558">U</tspan></text>
+            <text x="94.790909" y="46.167183" font-size="19.756px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="94.790909" y="46.167183" font-family="'Britannic Bold'" stroke-width=".26458">N</tspan></text>
+            <text x="106.71374" y="46.167183" font-size="19.756px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="106.71374" y="46.167183" font-family="'Britannic Bold'" stroke-width=".26458">D</tspan></text>
+        </g>
+        <g font-family="'Franklin Gothic Heavy'" letter-spacing="0px" word-spacing="0px">
+            <g font-size="19.756px" stroke-width=".26458">
+                <text x="98.852089" y="73.167183" style="line-height:1.25" xml:space="preserve"><tspan x="98.852089" y="73.167183" font-family="'Franklin Gothic Heavy'" stroke-width=".26458">P</tspan></text>
+                <text x="110.86172" y="73.167183" style="line-height:1.25" xml:space="preserve"><tspan x="110.86172" y="73.167183" font-family="'Franklin Gothic Heavy'" stroke-width=".26458">E</tspan></text>
+                <text x="124.14469" y="73.167183" style="line-height:1.25" xml:space="preserve"><tspan x="124.14469" y="73.167183" font-family="'Franklin Gothic Heavy'" stroke-width=".26458">T</tspan></text>
+                <text x="134.8521" y="73.167183" style="line-height:1.25" xml:space="preserve"><tspan x="134.8521" y="73.167183" font-family="'Franklin Gothic Heavy'" stroke-width=".26458">R</tspan></text>
+                <text x="148.12541" y="73.167183" style="line-height:1.25" xml:space="preserve"><tspan x="148.12541" y="73.167183" font-family="'Franklin Gothic Heavy'" stroke-width=".26458">A</tspan></text>
+                <text x="134.8521" y="86.267181" style="line-height:1.25" xml:space="preserve"><tspan x="134.8521" y="86.267181" font-family="'Franklin Gothic Heavy'" stroke-width=".26458">L</tspan></text>
+            </g>
+            <text transform="scale(1.0725 .93244)" x="137.10092" y="92.51796" font-size="21.187px" stroke-width=".28375" style="line-height:1.25" xml:space="preserve"><tspan x="137.10092" y="92.51796" font-family="'Franklin Gothic Heavy'" stroke-width=".28375">U</tspan></text>
+            <text x="160.88126" y="86.267181" font-size="19.756px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="160.88126" y="86.267181" font-family="'Franklin Gothic Heavy'" stroke-width=".26458">N</tspan></text>
+            <text x="173.86241" y="86.267181" font-size="19.756px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="173.86241" y="86.267181" font-family="'Franklin Gothic Heavy'" stroke-width=".26458">D</tspan></text>
+        </g>
+        <path transform="matrix(6.707 0 0 6.707 -456.49 -831.67)" d="m81.193 143.21 0.02339-3.432 0.81438 0.0234 0.06073 3.0093s9.6338-3.1697 10.258-2.0466c0.62395 1.1231-4.3427 4.2179-4.3427 4.2179l-5.8651 3.7936-0.04677 6.3879-0.92345 0.025s-0.23181-1.2146-2.6487-4.2415l-3.4646 2.0872-0.57403-0.84856 3.4646-2.0124s-2.6955-2.4459-2.2961-3.9184c0.39933-1.4725 5.5407-3.0449 5.5407-3.0449z" fill="#ebebeb" filter="url(#filter86443)" stroke="#ebebeb" stroke-width=".28237px"/>
+    </g>
+    <g transform="translate(-46.068 -108.14)">
+        <path d="m90.869 108.15-0.31549 97.032c-9.115-26.941-38.18-43.485-33.711-55.19 4.4693-11.706 95.264-37.241 98.488-32.522 3.2246 4.7186-107.95 73.005-107.95 73.005" fill="none" stroke="#fff" stroke-width="5"/>
+    </g>
+</svg>
