@@ -44,7 +44,7 @@
           <a href="#" class="selected-text hover:text-theme hover:opacity-90">Etusivu</a>
           <a href="#about" class="hover:text-theme hover:opacity-90">Tietoa</a>
           <a href="#portfolio" class="hover:text-theme hover:opacity-90">Portfolio</a>
-          <a href="https://www.linkedin.com/in/petra-lund/" target="_blank">
+          <a href="https://www.linkedin.com/in/petra-lund/">
             <img class="h-6 w-6" src="images/linkedin-icon-18-ffffff-48.png" />
           </a>
           <a href="#contact">
@@ -95,7 +95,7 @@
               <a href="#" :class="{ 'selected-text' : position==='home' }" class="hover:text-theme hover:opacity-90 w-1/2">Etusivu</a>
               <a href="#about" :class="{ 'selected-text' : position==='about' }" class="hover:text-theme hover:opacity-90 w-1/2">Tietoa</a>
               <a href="#portfolio" :class="{ 'selected-text' : position==='portfolio' }" class="hover:text-theme hover:opacity-90 w-1/2">Portfolio</a>
-              <a href="https://www.linkedin.com/in/petra-lund/" target="_blank">
+              <a href="https://www.linkedin.com/in/petra-lund/">
                 <img class="h-6 w-6" src="images/linkedin-icon-18-ffffff-48.png" />
               </a>
               <a href="#contact">
@@ -191,16 +191,18 @@
     <section class="w-full">
       <h2 id="portfolio" class="font-bold text-3xl">Portfolio</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        <img src="images/thumbnails/cycles-render-hahmo.png" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 1">
-        <img src="images/thumbnails/kratti1.png" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 2">
-        <img src="images/thumbnails/weather-app.png" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 3">
-        <img src="images/thumbnails/4.1.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 4">
-        <img src="images/thumbnails/8.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-left cursor-pointer" @click="showModal = 5">
-        <img src="images/thumbnails/10.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 6">
-        <img src="images/thumbnails/21.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 7">
-        <img src="images/thumbnails/34.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 8">
-        <img src="images/thumbnails/36.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 9">
-        <img src="images/thumbnails/37.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 10">
+        <img src="images/android-notifications.png" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 1">
+        <img src="images/react-native-gifted-chat.PNG" class="w-full h-36 lg:h-72 rounded object-cover object-bottom cursor-pointer" @click="showModal = 2">
+        <img src="images/thumbnails/cycles-render-hahmo.png" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 3">
+        <img src="images/thumbnails/kratti1.png" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 4">
+        <img src="images/thumbnails/weather-app.png" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 5">
+        <img src="images/thumbnails/4.1.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 6">
+        <img src="images/thumbnails/8.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-left cursor-pointer" @click="showModal = 7">
+        <img src="images/thumbnails/10.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 8">
+        <img src="images/thumbnails/21.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 9">
+        <img src="images/thumbnails/34.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 10">
+        <img src="images/thumbnails/36.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 11">
+        <img src="images/thumbnails/37.jpg" class="w-full h-36 lg:h-72 rounded object-cover object-top cursor-pointer" @click="showModal = 12">
       </div>
       <!-- modals -->
       <template x-for="modal in modals" :key="modal.id">
@@ -269,7 +271,7 @@
 
           <div class="flex mt-10 space-x-6">
             <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/petra-lund/" target="_blank">
+            <a href="https://www.linkedin.com/in/petra-lund/">
               <img class="h-8 w-8" src="images/linkedin-icon-18-ffffff-48.png" />
             </a>
           </div>          
@@ -287,6 +289,24 @@
         modals: [
         {
           id: 1,
+          name: 'Android Notifications',
+          image: 'images/android-notifications.png',
+          info: 'Android Studio, Kotlin',
+          description: '',
+          link: '',
+          doc: 'https://gitlab.labranet.jamk.fi/N2988/android-notifications',
+        },
+        {
+          id: 2,
+          name: 'React Native Gifted Chat',
+          image: 'images/react-native-gifted-chat.PNG',
+          info: 'React Native',
+          description: '',
+          link: '',
+          doc: 'https://gitlab.labranet.jamk.fi/N2988/giftedchat',
+        },
+        {
+          id: 3,
           name: '3D-malli',
           image: 'images/cycles-render-hahmo.png',
           info: '3D-mallintamisen perusteet -opintojaksolle tekemäni lopputyön Cycles-render.',
@@ -295,7 +315,7 @@
           doc: 'https://student.labranet.jamk.fi/~N2988/3D_raportti.pdf',
         },
         {
-          id: 2,
+          id: 4,
           name: 'Kratti-kauppa',
           image: 'images/kratti1.png',
           info: 'HTML, SCSS, Bootstrap, JavaScript',
@@ -304,7 +324,7 @@
           doc: 'https://gitlab.labranet.jamk.fi/N2988/web-visualisointi/-/tree/pages/WV-H11/project',
         },
         {
-          id: 3,
+          id: 5,
           name: 'Sää-sovellus',
           image: 'images/weather-app.png',
           info: 'React, Node.js, Openweathermap API',
@@ -313,7 +333,7 @@
           doc: 'https://student.labranet.jamk.fi/~N2988/web_ohjelmointi/harjoitusty%C3%B6/dokumentointi.html',
         },
         {
-          id: 4,
+          id: 6,
           name: 'Tuokiotupa vapaaehtois-esite',
           image: 'images/4.1.jpg',
           info: '',
@@ -322,7 +342,7 @@
           doc: '',
         },
         {
-          id: 5,
+          id: 7,
           name: 'Rati-riti-ralla talvitapahtuman LED-taulu mainos',
           image: 'images/8.jpg',
           info: '',
@@ -331,7 +351,7 @@
           doc: '',
         },
         {
-          id: 6,
+          id: 8,
           name: 'Lehtimainos',
           image: 'images/10.jpg',
           info: '',
@@ -340,7 +360,7 @@
           doc: '',
         },
         {
-          id: 7,
+          id: 9,
           name: 'Työ tulevaisuuteen mainosjuliste',
           image: 'images/21.jpg',
           info: '',
@@ -349,7 +369,7 @@
           doc: '',
         },
         {
-          id: 8,
+          id: 10,
           name: 'Verhoiluliike Ellinelli juliste',
           image: 'images/34.jpg',
           info: '',
@@ -358,7 +378,7 @@
           doc: '',
         },
         {
-          id: 9,
+          id: 11,
           name: 'Passover Warfare keikkajuliste',
           image: 'images/36.jpg',
           info: '',
@@ -367,7 +387,7 @@
           doc: '',
         },
         {
-          id: 10,
+          id: 12,
           name: 'Solonen ja Kosola keikkajuliste',
           image: 'images/37.jpg',
           info: '',
